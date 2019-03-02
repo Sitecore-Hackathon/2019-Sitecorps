@@ -377,8 +377,8 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.client.Applications.Di
                 this.AnchorText.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "anchor");
                 
                 //////////////////////////////////////////////////////// START CUSTOM BIT ////////////////////////////////////////////////////////
-                this.GoalLoadedValue.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "goal");
-                this.EventLoadedValue.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "pageevent");
+                this.GoalLoadedValue.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "goalid");
+                this.EventLoadedValue.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "eventid");
                 //this.Goal.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "goal");
                 //this.Event.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "pageevent");
                 //////////////////////////////////////////////////////// END CUSTOM BIT ////////////////////////////////////////////////////////

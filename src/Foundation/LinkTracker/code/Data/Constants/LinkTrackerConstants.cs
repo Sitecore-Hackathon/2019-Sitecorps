@@ -29,13 +29,13 @@ namespace Sitecore.Sbos.Module.LinkTracker.Data.Constants
 
         public const string LinkTrackerMgdJSPath = "/scripts/js/LinkTrackerManager.js";
 
-        public const string GoalAttributeName = "goal";
+        public const string GoalAttributeName = "goalid";
 
         public const string GoalTriggerAttName = "triggergoal";
 
         public const string GoalDataAttName = "goaldata";
 
-        public const string PageEventAttributeName = "pageevent";
+        public const string PageEventAttributeName = "eventid";
 
         public const string PageEventTriggerAttName = "triggerpageevent";
 

@@ -29,9 +29,14 @@
         this.GoalsDataSource.on("change:items", function () {
             if (this.__firstTime2) {
                 this.__firstTime2 = false;
+
                 var local = this;
+                var newArr = local.Goal.viewModel.items();
+                newArr.unshift({ $displayName: '', itemId: '' });
+                local.Goal.viewModel.rebind(newArr, null, null, '$displayName', 'itemId' )
+
                 var goalInput = this.GoalLoadedValue.get("text");
-                local.Goal.set("selectedValue", (!goalInput ? "" : goalInput) );
+                local.Goal.set("selectedValue", (!goalInput ? '' : goalInput) );
             }
         }, this);
 
@@ -39,7 +44,12 @@
         this.EventsDataSource.on("change:items", function () {
             if (this.__firstTime3) {
                 this.__firstTime3 = false;
+
                 var local = this;
+                var newArr = local.Event.viewModel.items();
+                newArr.unshift({ $displayName: '', itemId: '' });
+                local.Event.viewModel.rebind( newArr, null, null, '$displayName', 'itemId' )
+
                 var eventInput = this.EventLoadedValue.get("text");
                 local.Event.set("selectedValue", (!eventInput ? "" : eventInput));
             }
@@ -83,7 +93,7 @@
       pageevent = this.Event,
       //////////////////////////////////////////////////////// START CUSTOM BIT ////////////////////////////////////////////////////////
       selectedItemsPropertyName = "selectedNode",
-          template = '<link text="<%=displayText%>" anchor="<%=anchor%>" linktype="internal" class="<%=styleClass%>" title="<%=alternateText%>" <%=target%> querystring="<%=queryString%>" id="<%=itemId%>" goal="<%=goal%>" pageevent="<%=pageevent%>" />',
+          template = '<link text="<%=displayText%>" anchor="<%=anchor%>" linktype="internal" class="<%=styleClass%>" title="<%=alternateText%>" <%=target%> querystring="<%=queryString%>" id="<%=itemId%>" goalid="<%=goal%>" eventid="<%=pageevent%>" />',
       targetWindowValue,
       path,
       emptyOptionID = "{A3C9DB39-1D1B-4AA1-8C68-7B9674D055EE}",
