@@ -2,8 +2,6 @@
 
 **Sitecore JSS React - Trackable Links**
 
-## Summary
-
 ## Category:
 Best enhancement to JSS to change a JSS component rendering behavior based on user's session data
 
