@@ -126,37 +126,37 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.M
         protected virtual void LoadControls()
         {
             string goalValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.GoalAttributeName];
-            string triggerGoalValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.GoalTriggerAttName];
-            string goalDataValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.GoalDataAttName];
+            //string triggerGoalValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.GoalTriggerAttName];
+            //string goalDataValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.GoalDataAttName];
 
             if (!string.IsNullOrWhiteSpace(goalValue))
             {
                 this.Goal.Value = goalValue;
-                this.TriggerGoal.Value = triggerGoalValue;
-                this.GoalData.Value = goalDataValue;
+                //this.TriggerGoal.Value = triggerGoalValue;
+                //this.GoalData.Value = goalDataValue;
             }
 
             string pageEventValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.PageEventAttributeName];
-            string triggerPageEventValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.PageEventTriggerAttName];
-            string pageEventDataValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.PageEventDataAttName];
+            //string triggerPageEventValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.PageEventTriggerAttName];
+            //string pageEventDataValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.PageEventDataAttName];
 
             if (!string.IsNullOrWhiteSpace(pageEventValue))
             {
                 this.PageEvent.Value = pageEventValue;
-                this.TriggerPageEvent.Value = triggerPageEventValue;
-                this.PageEventData.Value = pageEventDataValue;
+                //this.TriggerPageEvent.Value = triggerPageEventValue;
+                //this.PageEventData.Value = pageEventDataValue;
             }
 
-            string campaignValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.CampaignAttributeName];
-            string campaignTriggerValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.CampaignTriggerAttName];
-            string campaignDataValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.CampaignDataAttName];
+            //string campaignValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.CampaignAttributeName];
+            //string campaignTriggerValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.CampaignTriggerAttName];
+            //string campaignDataValue = this.AnalyticsLinkAttributes[LinkTrackerConstants.CampaignDataAttName];
 
-            if (!string.IsNullOrWhiteSpace(campaignValue))
-            {
-                this.Campaign.Value = campaignValue;
-                this.TriggerCampaign.Value = campaignTriggerValue;
-                this.CampaignData.Value = campaignDataValue;
-            }
+            //if (!string.IsNullOrWhiteSpace(campaignValue))
+            //{
+            //    this.Campaign.Value = campaignValue;
+            //    this.TriggerCampaign.Value = campaignTriggerValue;
+            //    this.CampaignData.Value = campaignDataValue;
+            //}
         }
 
         protected override void OnOK(object sender, EventArgs args)
@@ -182,19 +182,19 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.M
 
             // Custom
             this.TrimComboboxControl(this.Goal);
-            LinkForm.SetAttribute(packet, LinkTrackerConstants.GoalTriggerAttName, this.TriggerGoal);
+            //LinkForm.SetAttribute(packet, LinkTrackerConstants.GoalTriggerAttName, this.TriggerGoal);
             LinkForm.SetAttribute(packet, LinkTrackerConstants.GoalAttributeName, this.Goal);
-            LinkForm.SetAttribute(packet, LinkTrackerConstants.GoalDataAttName, this.GoalData);
+            //LinkForm.SetAttribute(packet, LinkTrackerConstants.GoalDataAttName, this.GoalData);
     
             this.TrimComboboxControl(this.PageEvent);
-            LinkForm.SetAttribute(packet, LinkTrackerConstants.PageEventTriggerAttName, this.TriggerPageEvent);
+            //LinkForm.SetAttribute(packet, LinkTrackerConstants.PageEventTriggerAttName, this.TriggerPageEvent);
             LinkForm.SetAttribute(packet, LinkTrackerConstants.PageEventAttributeName, this.PageEvent);
-            LinkForm.SetAttribute(packet, LinkTrackerConstants.PageEventDataAttName, this.PageEventData);
+            //LinkForm.SetAttribute(packet, LinkTrackerConstants.PageEventDataAttName, this.PageEventData);
 
-            this.TrimComboboxControl(this.Campaign);
-            LinkForm.SetAttribute(packet, LinkTrackerConstants.CampaignTriggerAttName, this.TriggerCampaign);
-            LinkForm.SetAttribute(packet, LinkTrackerConstants.CampaignAttributeName, this.Campaign);
-            LinkForm.SetAttribute(packet, LinkTrackerConstants.CampaignDataAttName, this.CampaignData);
+            //this.TrimComboboxControl(this.Campaign);
+            //LinkForm.SetAttribute(packet, LinkTrackerConstants.CampaignTriggerAttName, this.TriggerCampaign);
+            //LinkForm.SetAttribute(packet, LinkTrackerConstants.CampaignAttributeName, this.Campaign);
+            //LinkForm.SetAttribute(packet, LinkTrackerConstants.CampaignDataAttName, this.CampaignData);
 
             // Sitecore
             SheerResponse.SetDialogValue(packet.OuterXml);

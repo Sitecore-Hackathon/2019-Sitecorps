@@ -23,10 +23,10 @@
         <Edit ID="Title" Width="100%" />
 
 
-          <Label for="TriggerGoal" GridPanel.NoWrap="true">
+          <!--<Label for="TriggerGoal" GridPanel.NoWrap="true">
               <Literal Text="Trigger Goal:"/>
           </Label>
-          <Checkbox ID="TriggerGoal" GridPanel.Width="100%" Width="100%" />
+          <Checkbox ID="TriggerGoal" GridPanel.Width="100%" Width="100%" />-->
 
           <Label for="Goal" GridPanel.NoWrap="true">
               <Literal Text="Goal:"/>
@@ -34,7 +34,7 @@
           <Combobox ID="Goal" GridPanel.Width="100%" Width="100%" Change="OnListboxChanged">
           </Combobox>
 
-          <Label For="GoalData" GridPanel.NoWrap="true">
+          <!--<Label For="GoalData" GridPanel.NoWrap="true">
               <Literal Text="Goal data value:" />
           </Label>
           <Edit ID="GoalData" Width="100%" />
@@ -42,7 +42,7 @@
           <Label for="TriggerPageEvent" GridPanel.NoWrap="true">
               <Literal Text="Trigger Page Event:"/>
           </Label>
-          <Checkbox ID="TriggerPageEvent" GridPanel.Width="100%" Width="100%" />
+          <Checkbox ID="TriggerPageEvent" GridPanel.Width="100%" Width="100%" />-->
 
           <Label for="PageEvent" GridPanel.NoWrap="true">
               <Literal Text="Page Event:"/>
@@ -50,7 +50,7 @@
           <Combobox ID="PageEvent" GridPanel.Width="100%" Width="100%" Change="OnListboxChanged">
           </Combobox>
 
-          <Label For="PageEventData" GridPanel.NoWrap="true">
+          <!--<Label For="PageEventData" GridPanel.NoWrap="true">
               <Literal Text="Page Event data value:" />
           </Label>
           <Edit ID="PageEventData" Width="100%" />
@@ -69,7 +69,7 @@
           <Label For="CampaignData" GridPanel.NoWrap="true">
               <Literal Text="Campaign data value:" />
           </Label>
-          <Edit ID="CampaignData" Width="100%" />
+          <Edit ID="CampaignData" Width="100%" />-->
       </GridPanel>
       
       <Button Header="Send a test mail" def:placeholder="Buttons" Click="OnTest"/>

@@ -1,10 +1,8 @@
-﻿using Sitecore;
-using Sitecore.Data;
+﻿using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Globalization;
 using Sitecore.Resources.Media;
-using Sitecore.Sbos.Module.LinkTracker.Data.Constants;
 using Sitecore.Shell.Applications.Dialogs;
 using Sitecore.Shell.Framework;
 using Sitecore.StringExtensions;
@@ -17,7 +15,6 @@ using Sitecore.Xml;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
@@ -317,7 +314,7 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.G
             string queryString = WebUtil.GetQueryString("ro");
             string linkAttribute = this.AnalyticsLinkAttributes[Attributes.id];
             if (!string.IsNullOrEmpty(linkAttribute) && ID.IsID(linkAttribute))
-                this.InternalLinkDataContext.SetFolder(new ItemUri(new ID(linkAttribute), Client.ContentDatabase));
+                this.InternalLinkDataContext.SetFolder(new ItemUri(new ID(linkAttribute), Sitecore.Configuration.Factory.GetDatabase("master")));
             if (queryString.Length <= 0)
                 return;
             this.InternalLinkDataContext.Root = queryString;
