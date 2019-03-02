@@ -34,6 +34,7 @@ Does your module rely on other Sitecore modules or frameworks?
   - Add **sc910.sc.jssdemo** to your Sitecore iis bindings 
 - Install Demo Package (Link to be added later) (Select **Overwrite all**)
 - Publish Site
+- Rebuild Index (need master and core indexed for module to fully work)
 - Deploy marketing definitions (Goals and Events only) from Control Panel 
 
 ![Deploy Marketing Definition](images/Deploy-marketing-definitions.png?raw=true "Deploy Marketing Definition")
