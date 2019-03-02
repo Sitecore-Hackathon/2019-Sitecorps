@@ -65,10 +65,13 @@ The provided package will include demo items that we will explain how it works a
 
 ![Personalized Content](images/PersonalizedContent.png?raw=true "Personalized Content")
 
-**Want to See this in action in the demo site?**
+## Want to See this in action in the demo site?
 - Go to http://sc910.sc.jssdemo/TrackingLinks
 - Click on any of the link of the page (You like Red or Blue color?)
 - You will imediately start seeing personalized content based on what you have clicked!
+
+## --- NOTE ---
+With Sitecore JSS React Tracking API, there seem to be a bug when used in **Firefox browser** where the async call does not execute correctly when we call onClick event for an anchor (We even added alert to wait for the exeuction to finish but it still didnt work), we are opening an issue in Sitecore JSS repo for this.
 
 ## Video:
 
