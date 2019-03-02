@@ -10,8 +10,8 @@
 
       // work around an issue in combobox
       this.TargetsDataSource.on("change:items", function () {
-        if (this.__firstTime) {
-          this.__firstTime = false;
+        if (this.__firstTime1) {
+          this.__firstTime1 = false;
           var local = this;
           var targets = this.TargetLoadedValue.get("text").split(',');
           var targetWindowValue = {};
@@ -27,33 +27,21 @@
 
     //////////////////////////////////////////////////////// START CUSTOM BIT ////////////////////////////////////////////////////////
         this.GoalsDataSource.on("change:items", function () {
-            if (this.__firstTime) {
-                this.__firstTime = false;
+            if (this.__firstTime2) {
+                this.__firstTime2 = false;
                 var local = this;
-                var goals = this.GoalLoadedValue.get("text").split(',');
-                var goalsValue = {};
-                goals.forEach(function (g) {
-                    if (goalsValue == undefined || goalsValue.$displayName == undefined) {
-                        local.Goal.set("selectedValue", g);
-                    }
-                    goalsValue = local.Target.get("selectedItem");
-                });
+                var goalInput = this.GoalLoadedValue.get("text");
+                local.Goal.set("selectedValue", (!goalInput ? "" : goalInput) );
             }
         }, this);
 
 
         this.EventsDataSource.on("change:items", function () {
-            if (this.__firstTime) {
-                this.__firstTime = false;
+            if (this.__firstTime3) {
+                this.__firstTime3 = false;
                 var local = this;
-                var pageevents = this.EventLoadedValue.get("text").split(',');
-                var eventValue = {};
-                pageevents.forEach(function (e) {
-                    if (eventValue == undefined || eventValue.$displayName == undefined) {
-                        local.Event.set("selectedValue", e);
-                    }
-                    eventValue = local.Event.get("selectedItem");
-                });
+                var eventInput = this.EventLoadedValue.get("text");
+                local.Event.set("selectedValue", (!eventInput ? "" : eventInput));
             }
         }, this);
     //////////////////////////////////////////////////////// END CUSTOM BIT ////////////////////////////////////////////////////////
@@ -154,8 +142,10 @@
 
       return this.closeDialog(itemLink);
     },
-        
-    __firstTime: true
+
+    __firstTime1: true,
+    __firstTime2: true,
+    __firstTime3: true
 
   });
 
