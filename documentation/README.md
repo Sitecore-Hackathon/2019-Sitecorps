@@ -1,68 +1,51 @@
 # Documentation
 
-The documentation for this years Hackathon must be provided as a readme in Markdown format as part of your submission. 
-
-You can find a very good reference to Github flavoured markdown reference in [this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). If you want something a bit more WYSIWYG for editing then could use [StackEdit](https://stackedit.io/app) which provides a more user friendly interface for generating the Markdown code. Those of you who are [VS Code fans](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview) can edit/preview directly in that interface too.
-
-Examples of things to include are the following.
+**Sitecore JSS React - Trackable Links**
 
 ## Summary
 
-**Category:** Hackathon Category
+**Category:** Best enhancement to JSS to change a JSS component rendering behavior based on user's session data
 
-What is the purpose of your module? What problem does it solve and how does it do that?
+Trackable Links module will enable content authors and Marketers to assosiate Goals and Events to a general link field from Content Editor or Experience editor then track them via clicks on the links on the Sitecore JSS powered website (React) and push them back to xConnect, Which will then enable them to personalize any content based on the trigger goals/events for the jss website visitor 
 
 ## Pre-requisites
 
 Does your module rely on other Sitecore modules or frameworks?
 
-- List any dependencies
-- Or other modules that must be installed
-- Or services that must be enabled/configured
+- Sitecore 9.1 XP0
+- Enable anonymous Indexing on xConnect (See [here](https://doc.sitecore.com/developers/91/sitecore-experience-platform/en/enable-indexing-of-anonymous-contacts.html))
+- Install **[Sitecore JavaScript Services Server for Sitecore 9.1 XP]** on Sitecore Instance [Link]
+(https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/110/Sitecore_JavaScript_Services_1100.aspx)
 
 ## Installation
 
-Provide detailed instructions on how to install the module, and include screenshots where necessary.
+- Install **Sitecore 9.1 (XP0 Single)**, Select **$Prefix = "sc910"** (domain to be **http://sc910.sc**)
+- Install **[Sitecore JavaScript Services Server for Sitecore 9.1 XP]** on Sitecore Instance [Link]
+(https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/110/Sitecore_JavaScript_Services_1100.aspx)
+- Update xconnect config to enable anonymous indexing (Switch **IndexAnonymousContactData** to true)
+  - [xconnect root path]\App_Data\jobs\continuous\IndexWorker\App_data\config\sitecore\SearchIndexer\sc.Xdb.Collection.IndexerSettings.xml
+  - [xconnect root path]\App_Data\Config\Sitecore\SearchIndexer\sc.Xdb.Collection.IndexerSettings.xml
+- Restart all xConnect services
+- Add JSS host and binding
+  - In your local hosts file add **(127.0.0.1 sc910.sc.jssdemo)**
+  - Add **sc910.sc.jssdemo** to your Sitecore iis bindings 
+- Install Demo Package (Link to be added later) (Select **Overwrite all**)
+- Publish Site
+- Deploy marketing definitions (Goals and Events only) from Control Panel 
 
-1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-2. ???
-3. Profit
+![Deploy Marketing Definition](images/Deploy-marketing-definitions.png?raw=true "Deploy Marketing Definition")
+
 
 ## Configuration
 
-How do you configure your module once it is installed? Are there items that need to be updated with settings, or maybe config files need to have keys updated?
-
-Remember you are using Markdown, you can provide code samples too:
-
-```xml
-<?xml version="1.0"?>
-<!--
-  Purpose: Configuration settings for my hackathon module
--->
-<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
-  <sitecore>
-    <settings>
-      <setting name="MyModule.Setting" value="Hackathon" />
-    </settings>
-  </sitecore>
-</configuration>
-```
+Everything should be included in the provided package and steps above
 
 ## Usage
 
-Provide documentation  about your module, how do the users use your module, where are things located, what do icons mean, are there any secret shortcuts etc.
-
-Please include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
-
-![Hackathon Logo](images/hackathon.png?raw=true "Hackathon Logo")
-
-You can embed images of different formats too:
-
-![Deal With It](images/deal-with-it.gif?raw=true "Deal With It")
-
-And you can embed external images too:
-
-![Random](https://placeimg.com/480/240/any "Random")
+The provided package will include demo items that we will explain how it works and how it can be used in other areas
+1-  We create a React component that Extend the original Link component, and we named it **TrackableLink**
+2- To use this component, you can reference it from any React component like this:
+![Trackable Link Usage](images/TrackableLinkUsage.png?raw=true "Trackable Link Usage")
 
 ## Video
 

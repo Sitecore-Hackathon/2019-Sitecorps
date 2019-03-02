@@ -116,15 +116,15 @@ exports.TrackableLink = function (_a) {
     }
     var anchorAttrs = {};
     /* Update the anchor attributes --> pass goal Id and event Id , onClick action calling TrackMe method */
-    if ((link.goalId && link.goalId != '') || (link.eventId && link.eventId != '')) {
+    if ((link.goalid && link.goalid != '') || (link.eventid && link.eventid != '')) {
         anchorAttrs = {
             href: link.href,
             className: link.class,
             title: link.title,
             target: link.target,
-            goalId: link.goalId,
-            eventId: link.eventId,
-            onClick: function () { TrackMe(link.goalId, link.eventId); }
+            goalId: link.goalid,
+            eventId: link.eventid,
+            onClick: function () { TrackMe(link.goalid, link.eventid); }
         };
     }
     else {
