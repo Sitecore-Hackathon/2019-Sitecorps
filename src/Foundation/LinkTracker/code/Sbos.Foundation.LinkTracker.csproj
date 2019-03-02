@@ -111,6 +111,8 @@
     <Content Include="sitecore\shell\Applications\Dialogs\MailLink\MailLink.xml" />
     <Content Include="sitecore\shell\Applications\Dialogs\MediaLink\MediaLink.xml" />
     <Content Include="sitecore\shell\Applications\Dialogs\GeneralLink\GeneralLink.xml" />
+    <Content Include="sitecore\shell\client\Applications\Dialogs\InsertAnchorDialog.js" />
+    <Content Include="sitecore\shell\client\Applications\Dialogs\InsertEmailDialog.js" />
     <Content Include="sitecore\shell\client\Applications\Dialogs\InsertLinkViaTreeDialog.js" />
     <Content Include="App_Config\Include\Foundation\Sbos.Foundation.LinkTracker.Serialization.config" />
     <None Include="Demo.md" />
@@ -140,6 +142,8 @@
     <Compile Include="sitecore\shell\Applications\Dialogs\MailLink\TrackedMailLink.cs" />
     <Compile Include="sitecore\shell\Applications\Dialogs\MediaLink\TrackedMediaLink.cs" />
     <Compile Include="sitecore\shell\Applications\Dialogs\GeneralLink\GeneralLinkForm.cs" />
+    <Compile Include="sitecore\shell\client\Applications\Dialogs\InsertAnchor.cs" />
+    <Compile Include="sitecore\shell\client\Applications\Dialogs\InsertEmail.cs" />
     <Compile Include="sitecore\shell\client\Applications\Dialogs\InsertLinkDialogTree.cs" />
   </ItemGroup>
   <ItemGroup>

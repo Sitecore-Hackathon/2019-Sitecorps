@@ -26,7 +26,6 @@
 
 
     //////////////////////////////////////////////////////// START CUSTOM BIT ////////////////////////////////////////////////////////
-
         this.GoalsDataSource.on("change:items", function () {
             if (this.__firstTime) {
                 this.__firstTime = false;
@@ -96,7 +95,7 @@
       pageevent = this.Event,
       //////////////////////////////////////////////////////// START CUSTOM BIT ////////////////////////////////////////////////////////
       selectedItemsPropertyName = "selectedNode",
-      template = '<link text="<%=displayText%>" anchor="<%=anchor%>" linktype="internal" class="<%=styleClass%>" title="<%=alternateText%>" <%=target%> querystring="<%=queryString%>" id="<%=itemId%>" />',
+          template = '<link text="<%=displayText%>" anchor="<%=anchor%>" linktype="internal" class="<%=styleClass%>" title="<%=alternateText%>" <%=target%> querystring="<%=queryString%>" id="<%=itemId%>" goal="<%=goal%>" pageevent="<%=pageevent%>" />',
       targetWindowValue,
       path,
       emptyOptionID = "{A3C9DB39-1D1B-4AA1-8C68-7B9674D055EE}",
@@ -147,8 +146,8 @@
         path: path,
         anchor: htmlEncode(anchor.get("text")),
         //////////////////////////////////////////////////////// START CUSTOM BIT ////////////////////////////////////////////////////////
-        goal: goal.get("selectedItem"),
-        pageevent: pageevent.get("selectedItem")
+        goal: goal.get("selectedItemId"),
+        pageevent: pageevent.get("selectedItemId")
         //////////////////////////////////////////////////////// START CUSTOM BIT ////////////////////////////////////////////////////////
 
       });

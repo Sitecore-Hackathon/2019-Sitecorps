@@ -54,7 +54,7 @@ Languages:
         sitecore\admin
     - ID: "b3f89d3b-fc37-4699-860e-db8fb37323c1"
       Hint: Text
-      Value: "Event:"
+      Value: "Page Event:"
 - Language: "ja-JP"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

@@ -169,7 +169,17 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.client.Applications.Di
             get;
             set;
         }
+        public Rendering GoalLoadedValue
+        {
+            get;
+            set;
+        }
         public Rendering Event
+        {
+            get;
+            set;
+        }
+        public Rendering EventLoadedValue
         {
             get;
             set;
@@ -365,10 +375,12 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.client.Applications.Di
                 this.StyleClass.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "class");
                 this.QueryString.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "querystring");
                 this.AnchorText.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "anchor");
-
+                
                 //////////////////////////////////////////////////////// START CUSTOM BIT ////////////////////////////////////////////////////////
-                this.Goal.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "goal");
-                this.Event.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "event");
+                this.GoalLoadedValue.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "goal");
+                this.EventLoadedValue.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "pageevent");
+                //this.Goal.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "goal");
+                //this.Event.Parameters["Text"] = InsertLinkDialogTree.GetXmlAttributeValue(xElement, "pageevent");
                 //////////////////////////////////////////////////////// END CUSTOM BIT ////////////////////////////////////////////////////////
 
                 this.SetupTargetDropbox(xElement);
@@ -403,5 +415,6 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.client.Applications.Di
             }
             this.TargetLoadedValue.Parameters["Text"] = targetCustomItemId;
         }
+        
     }
 }
