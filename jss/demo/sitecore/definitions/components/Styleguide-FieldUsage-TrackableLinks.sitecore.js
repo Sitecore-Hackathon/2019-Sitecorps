@@ -2,22 +2,17 @@
 import { CommonFieldTypes, SitecoreIcon, Manifest } from '@sitecore-jss/sitecore-jss-manifest';
 
 /**
- * Adds the Styleguide-FieldUsage-Text component to the disconnected manifest.
+ * Adds the Styleguide-FieldUsage-Link component to the disconnected manifest.
  * This function is invoked by convention (*.sitecore.js) when 'jss manifest' is run.
  * @param {Manifest} manifest Manifest instance to add components to
  */
 export default function(manifest) {
   manifest.addComponent({
-    name: 'Styleguide-FieldUsage-Text',
-    icon: SitecoreIcon.Text,
+    name: 'Styleguide-FieldUsage-TrackableLinks',
+    icon: SitecoreIcon.Link,
     fields: [
-      { name: 'sample', type: CommonFieldTypes.SingleLineText },
-      {
-        name: 'sample2',
-        displayName: 'Customize Name Shown in Sitecore',
-        required: true,
-        type: CommonFieldTypes.SingleLineText,
-      },
+      { name: 'LinkA', type: CommonFieldTypes.GeneralLink },
+      { name: 'LinkB', type: CommonFieldTypes.GeneralLink },
     ],
     // inherit fields from another template (../templates/Styleguide-Explanatory-Component)
     // inheritance adds fields defined on the base template(s) implicitly to this component
