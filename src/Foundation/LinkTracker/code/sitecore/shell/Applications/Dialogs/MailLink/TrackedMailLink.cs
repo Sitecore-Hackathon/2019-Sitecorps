@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Specialized;
-using System.Xml;
+﻿using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Sbos.Module.LinkTracker.Data.Constants;
 using Sitecore.Shell.Applications.Dialogs;
-using Sitecore.Shell.Applications.Dialogs.ExternalLink;
+using Sitecore.Shell.Applications.Dialogs.MailLink;
 using Sitecore.Web.UI.HtmlControls;
 using Sitecore.Web.UI.Sheer;
 using Sitecore.Xml;
-using System.Reflection;
-using Sitecore.Data.Items;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
+using System.Reflection;
+using System.Text.RegularExpressions;
+using System.Xml;
 
-namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.ExternalLink
+namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.MediaLink
 {
-    public class TrackedExternalLink : ExternalLinkForm
+    public class TrackedMailLink : MailLinkForm
     {
         protected Combobox Goal;
 
@@ -34,7 +35,7 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.E
         protected Checkbox TriggerCampaign;
 
         protected Edit CampaignData;
-       
+
         private NameValueCollection analyticsLinkAttributes;
 
         protected NameValueCollection AnalyticsLinkAttributes
@@ -105,7 +106,6 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.E
             return items;
         }
         
-
         private string GetWebRootPath(string assembly)
         {
             string assemblyLoc = Assembly.Load(assembly).CodeBase;
@@ -164,16 +164,19 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.E
             // Sitecore
             Assert.ArgumentNotNull(sender, "sender");
             Assert.ArgumentNotNull(args, "args");
-            string path = this.GetPath();
-            string attributeFromValue = LinkForm.GetLinkTargetAttributeFromValue(this.Target.Value, this.CustomTarget.Value);
-            Packet packet = new Packet("link");
+            string mail = this.GetMail();
+            if (mail == "__Canceled")
+            {
+                SheerResponse.Alert("The e-mail address is invalid.", Array.Empty<string>());
+                return;
+            }
+            Packet packet = new Packet("link", Array.Empty<string>());
             LinkForm.SetAttribute(packet, "text", this.Text);
-            LinkForm.SetAttribute(packet, "linktype", "external");
-            LinkForm.SetAttribute(packet, "url", path);
+            LinkForm.SetAttribute(packet, "linktype", "mailto");
+            LinkForm.SetAttribute(packet, "url", mail);
             LinkForm.SetAttribute(packet, "anchor", string.Empty);
             LinkForm.SetAttribute(packet, "title", this.Title);
             LinkForm.SetAttribute(packet, "class", this.Class);
-            LinkForm.SetAttribute(packet, "target", attributeFromValue);
 
             // Custom
             this.TrimComboboxControl(this.Goal);
@@ -192,19 +195,29 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.E
             LinkForm.SetAttribute(packet, LinkTrackerConstants.CampaignDataAttName, this.CampaignData);
 
             // Sitecore
-            Context.ClientPage.ClientResponse.SetDialogValue(packet.OuterXml);
+            SheerResponse.SetDialogValue(packet.OuterXml);
             SheerResponse.CloseWindow();
         }
-
-        private string GetPath()
+        private string GetMail()
         {
-            string url = this.Url.Value;
-            if (url.Length > 0 && url.IndexOf("://", StringComparison.InvariantCulture) < 0 && !url.StartsWith("/", StringComparison.InvariantCulture))
+            string value = this.Url.Value;
+            string str = value;
+            if (str.Length > 0)
             {
-                url = string.Concat("http://", url);
+                if (str.IndexOf(":", StringComparison.InvariantCulture) >= 0)
+                {
+                    str = str.Substring(str.IndexOf(":", StringComparison.InvariantCulture) + 1);
+                }
+                if (!(new Regex("^[A-Za-z0-9](([_\\.\\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\\.\\-]?[a-zA-Z0-9]+)*)\\.([A-Za-z]{2,})$", RegexOptions.IgnoreCase)).IsMatch(str))
+                {
+                    return "__Canceled";
+                }
             }
-
-            return url;
+            if (value.Length > 0 && value.IndexOf(":", StringComparison.InvariantCulture) < 0)
+            {
+                value = string.Concat("mailto:", value);
+            }
+            return value;
         }
 
         protected virtual void TrimComboboxControl(Combobox control)

@@ -6,6 +6,7 @@ using System.Xml;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Pipelines;
+using Sitecore.Sbos.Module.LinkTracker.Data.Constants;
 
 namespace Sitecore.Sbos.Module.LinkTracker.Events.Processors
 {
@@ -17,47 +18,68 @@ namespace Sitecore.Sbos.Module.LinkTracker.Events.Processors
 
         public void Process(PipelineArgs args)
         {
+            Reload();
+        }
+
+        public void Reload()
+        {
             var defItems = this.GetDefinitionItems();
             if (defItems == null || !defItems.Any())
                 return;
 
             string webRooPath = this.GetWebRootPath("Sitecore.Sbos.Module.LinkTracker");
 
+            var dialogPaths = new[] {
+                LinkTrackerConstants.Dialog.ExternalForm,
+                LinkTrackerConstants.Dialog.MediaForm,
+                LinkTrackerConstants.Dialog.JavascriptForm,
+                // These are overriden by sitecore to use newer Speak UI
+                //LinkTrackerConstants.Dialog.InternalForm,
+                //LinkTrackerConstants.Dialog.AnchorForm,
+                //LinkTrackerConstants.Dialog.MailForm
+            };
+
             if (!string.IsNullOrEmpty(webRooPath))
             {
                 if (defItems != null)
                 {
-                    XmlDocument xdoc = new XmlDocument();
-                    xdoc.Load(webRooPath + Data.Constants.LinkTrackerConstants.ExternalFormPath);
-                    XmlNodeList nodeList = xdoc.GetElementsByTagName("Combobox");
-
-                    if (nodeList.Count > 1)
+                    foreach(var dialogPath in dialogPaths)
                     {
-                        XmlElement goalElement = (XmlElement) nodeList[this.Index];
-                        goalElement.IsEmpty = true;
+                        var offset = dialogPath == LinkTrackerConstants.Dialog.JavascriptForm ? -1 : 0; // this one is off by one cause it doesn't have a combobox above it like the rest
+                        var index = this.Index + offset;
 
-                        XmlElement listItemEmpty = xdoc.CreateElement("ListItem");
+                        XmlDocument xdoc = new XmlDocument();
+                        xdoc.Load(webRooPath + dialogPath);
+                        XmlNodeList nodeList = xdoc.GetElementsByTagName("Combobox");
 
-                        listItemEmpty.SetAttribute("Value", string.Empty);
-                        listItemEmpty.SetAttribute("Header", string.Empty);
-                        listItemEmpty.RemoveAttribute("xmlns");
-
-                        goalElement.AppendChild(listItemEmpty);
-
-                        foreach (var item in defItems)
+                        if (nodeList.Count > 1 && index < nodeList.Count)
                         {
-                            var itemName = item.DisplayName;
-                            var itemId = item.ID;
+                            XmlElement goalElement = (XmlElement)nodeList[index];
+                            goalElement.IsEmpty = true;
 
-                            XmlElement listItem = xdoc.CreateElement("ListItem");
+                            XmlElement listItemEmpty = xdoc.CreateElement("ListItem");
 
-                            listItem.SetAttribute("Value", itemId.ToString());
-                            listItem.SetAttribute("Header", itemName);
-                            listItem.RemoveAttribute("xmlns");
+                            listItemEmpty.SetAttribute("Value", string.Empty);
+                            listItemEmpty.SetAttribute("Header", string.Empty);
+                            listItemEmpty.RemoveAttribute("xmlns");
 
-                            goalElement.AppendChild(listItem);
+                            goalElement.AppendChild(listItemEmpty);
+
+                            foreach (var item in defItems)
+                            {
+                                var itemName = item.DisplayName;
+                                var itemId = item.ID;
+
+                                XmlElement listItem = xdoc.CreateElement("ListItem");
+
+                                listItem.SetAttribute("Value", itemId.ToString());
+                                listItem.SetAttribute("Header", itemName);
+                                listItem.RemoveAttribute("xmlns");
+
+                                goalElement.AppendChild(listItem);
+                            }
+                            xdoc.Save(webRooPath + dialogPath);
                         }
-                        xdoc.Save(webRooPath + Data.Constants.LinkTrackerConstants.ExternalFormPath);
                     }
                 }
             }

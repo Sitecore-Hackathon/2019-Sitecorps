@@ -101,7 +101,12 @@
     <Content Include="scripts\css\LinkTracker.css" />
     <Content Include="scripts\js\LinkTracker.js" />
     <Content Include="scripts\js\LinkTrackerManager.js" />
+    <Content Include="sitecore\shell\Applications\Dialogs\AnchorLink\AnchorLink.xml" />
     <Content Include="sitecore\shell\Applications\Dialogs\ExternalLink\ExternalLink.xml" />
+    <Content Include="sitecore\shell\Applications\Dialogs\InternalLink\InternalLink.xml" />
+    <Content Include="sitecore\shell\Applications\Dialogs\JavascriptLink\JavascriptLink.xml" />
+    <Content Include="sitecore\shell\Applications\Dialogs\MailLink\MailLink.xml" />
+    <Content Include="sitecore\shell\Applications\Dialogs\MediaLink\MediaLink.xml" />
     <None Include="Demo.md" />
     <None Include="Web.config" />
   </ItemGroup>
@@ -122,7 +127,12 @@
     <Compile Include="Pipelines\RenderField\SetTrackedAttributeOnLink.cs" />
     <Compile Include="Pipelines\RenderLayout\InsertHeadControls.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sitecore\shell\Applications\Dialogs\AnchorLink\TrackedAnchorLink.cs" />
     <Compile Include="sitecore\shell\Applications\Dialogs\ExternalLink\TrackedExternalLink.cs" />
+    <Compile Include="sitecore\shell\Applications\Dialogs\InternalLink\TrackedInternalLink.cs" />
+    <Compile Include="sitecore\shell\Applications\Dialogs\JavascriptLink\TrackedJavascriptLink.cs" />
+    <Compile Include="sitecore\shell\Applications\Dialogs\MailLink\TrackedMailLink.cs" />
+    <Compile Include="sitecore\shell\Applications\Dialogs\MediaLink\TrackedMediaLink.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\Local.pubxml" />

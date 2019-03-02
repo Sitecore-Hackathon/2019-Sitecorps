@@ -22,11 +22,11 @@ Languages:
       Value: 20190302T042610Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
-      Value: "{FCFDBB96-946A-4D2F-BCCD-5573073FC176}"
+      Value: "{AF32C98B-C828-42AF-A649-74C1DE3303FB}"
     - ID: "518b9af8-a98d-5eb7-b6c2-3d82135b5522"
       Hint: externalLink
       Value: |
-        <link text="Link to Sitecore" url="https://www.sitecore.com" linktype="external" />
+        <link text="Link to Sitecore" linktype="external" url="https://www.sitecore.com" anchor="" target="" triggergoal="1" goal="{28A7C944-B8B6-45AD-A635-6F72E8F81F69}" goaldata="SampleGoalData" triggerpageevent="1" pageevent="{1C9DAB80-C680-4859-B6ED-F6455FA9ED0C}" pageeventdata="SampleEventData" />
     - ID: "56533fe7-8ec4-5890-a460-aea83a17439a"
       Hint: paramsLink
       Value: |

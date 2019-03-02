@@ -1,21 +1,21 @@
-﻿using System;
-using System.Collections.Specialized;
-using System.Xml;
+﻿using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Sbos.Module.LinkTracker.Data.Constants;
 using Sitecore.Shell.Applications.Dialogs;
-using Sitecore.Shell.Applications.Dialogs.ExternalLink;
+using Sitecore.Shell.Applications.Dialogs.MediaLink;
 using Sitecore.Web.UI.HtmlControls;
 using Sitecore.Web.UI.Sheer;
 using Sitecore.Xml;
-using System.Reflection;
-using Sitecore.Data.Items;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
+using System.Reflection;
+using System.Xml;
 
-namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.ExternalLink
+namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.MediaLink
 {
-    public class TrackedExternalLink : ExternalLinkForm
+    public class TrackedMediaLink : MediaLinkForm
     {
         protected Combobox Goal;
 
@@ -34,7 +34,7 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.E
         protected Checkbox TriggerCampaign;
 
         protected Edit CampaignData;
-       
+
         private NameValueCollection analyticsLinkAttributes;
 
         protected NameValueCollection AnalyticsLinkAttributes
@@ -164,16 +164,21 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.E
             // Sitecore
             Assert.ArgumentNotNull(sender, "sender");
             Assert.ArgumentNotNull(args, "args");
-            string path = this.GetPath();
-            string attributeFromValue = LinkForm.GetLinkTargetAttributeFromValue(this.Target.Value, this.CustomTarget.Value);
-            Packet packet = new Packet("link");
+            Item selectionItem = this.MediaLinkTreeview.GetSelectionItem();
+            if (selectionItem == null)
+            {
+                Context.ClientPage.ClientResponse.Alert("Select a media item.");
+                return;
+            }
+            string mediaPath = selectionItem.Paths.MediaPath;
+            string linkTargetAttributeFromValue = LinkForm.GetLinkTargetAttributeFromValue(this.Target.Value, this.CustomTarget.Value);
+            Packet packet = new Packet("link", Array.Empty<string>());
             LinkForm.SetAttribute(packet, "text", this.Text);
-            LinkForm.SetAttribute(packet, "linktype", "external");
-            LinkForm.SetAttribute(packet, "url", path);
-            LinkForm.SetAttribute(packet, "anchor", string.Empty);
+            LinkForm.SetAttribute(packet, "linktype", "media");
             LinkForm.SetAttribute(packet, "title", this.Title);
             LinkForm.SetAttribute(packet, "class", this.Class);
-            LinkForm.SetAttribute(packet, "target", attributeFromValue);
+            LinkForm.SetAttribute(packet, "target", linkTargetAttributeFromValue);
+            LinkForm.SetAttribute(packet, "id", selectionItem.ID.ToString());
 
             // Custom
             this.TrimComboboxControl(this.Goal);
@@ -192,20 +197,10 @@ namespace Sitecore.Sbos.Module.LinkTracker.sitecore.shell.Applications.Dialogs.E
             LinkForm.SetAttribute(packet, LinkTrackerConstants.CampaignDataAttName, this.CampaignData);
 
             // Sitecore
-            Context.ClientPage.ClientResponse.SetDialogValue(packet.OuterXml);
+            SheerResponse.SetDialogValue(packet.OuterXml);
             SheerResponse.CloseWindow();
         }
-
-        private string GetPath()
-        {
-            string url = this.Url.Value;
-            if (url.Length > 0 && url.IndexOf("://", StringComparison.InvariantCulture) < 0 && !url.StartsWith("/", StringComparison.InvariantCulture))
-            {
-                url = string.Concat("http://", url);
-            }
-
-            return url;
-        }
+        
 
         protected virtual void TrimComboboxControl(Combobox control)
         {

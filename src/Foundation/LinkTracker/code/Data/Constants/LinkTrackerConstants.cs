@@ -4,7 +4,15 @@ namespace Sitecore.Sbos.Module.LinkTracker.Data.Constants
 {
     public class LinkTrackerConstants
     {
-        public const string ExternalFormPath = "/sitecore/shell/Applications/Dialogs/ExternalLink/ExternalLink.xml";
+        public struct Dialog
+        {
+            public const string ExternalForm= "/sitecore/shell/Applications/Dialogs/ExternalLink/ExternalLink.xml";
+            public const string InternalForm = "/sitecore/shell/Applications/Dialogs/InternalLink/InternalLink.xml";
+            public const string JavascriptForm = "/sitecore/shell/Applications/Dialogs/JavascriptLink/JavascriptLink.xml";
+            public const string MailForm = "/sitecore/shell/Applications/Dialogs/MailLink/MailLink.xml";
+            public const string MediaForm = "/sitecore/shell/Applications/Dialogs/MediaLink/MediaLink.xml";
+            public const string AnchorForm = "/sitecore/shell/Applications/Dialogs/AnchorLink/AnchorLink.xml";
+        }
 
         public const string AssemblyLinkTrackerPath = "/bin/Sitecore.Sbos.Module.LinkTracker.DLL";
 

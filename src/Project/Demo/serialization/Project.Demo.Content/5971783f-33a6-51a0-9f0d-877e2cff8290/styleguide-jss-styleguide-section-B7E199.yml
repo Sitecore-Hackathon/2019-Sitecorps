@@ -19,14 +19,13 @@ Languages:
     Fields:
     - ID: "19946a9c-44b1-5521-834c-51937a0a33ab"
       Hint: sample
-      Value: |
-        This is a sample text field. <mark>HTML is encoded.</mark> In Sitecore, editors will see a <input type="text">.
+      Value: This is a sample text field. HTML is encoded. In Sitecore, editors will see a .
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20190302T042610Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
-      Value: "{FCFDBB96-946A-4D2F-BCCD-5573073FC176}"
+      Value: "{AF32C98B-C828-42AF-A649-74C1DE3303FB}"
     - ID: "961cf335-dcd2-56c5-b3af-96c11f9c0f76"
       Hint: sample2
       Value: This is another sample text field using rendering options. <mark>HTML supported with encode=false.</mark> Cannot edit because editable=false.
