@@ -109,33 +109,33 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\Foundation.Serialization.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Base.config" />
-    <Content Include="App_Config\Include\Rainbow.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.Roles.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.Users.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
-    <None Include="App_Config\Include\Unicorn\Unicorn.UI.IdentityServer.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.DeployedContentEditorWarnings.config.disabled" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.PowerShell.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Dilithium.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Roles.DataProvider.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Roles.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Users.DataProvider.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Users.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Deployed.config">
+    <Content Include="App_Config\Modules\Rainbow.config" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.DataProvider.config" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.Configs.Dependency.config.example" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.Configs.Default.example" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.config" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.AutoPublish.config" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.Configs.Default.Roles.config.example" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.Configs.Default.Users.config.example" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.zSharedSecret.config.example" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.UI.IdentityServer.config" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.UI.DeployedContentEditorWarnings.config.disabled" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.UI.config" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.Remote.config.disabled" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.PowerShell.config" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.Dilithium.config.example" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.Roles.DataProvider.config" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.Roles.config" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.Users.DataProvider.config" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.Users.config" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.Deployed.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Source.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Settings.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config" />
+    <Content Include="App_Config\Modules\Unicorn\Unicorn.zSharedSecret.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
