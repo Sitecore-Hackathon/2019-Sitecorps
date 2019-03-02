@@ -14,7 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		src\Foundation\Serialization\code\App_Config\Include\Foundation\Foundation.Serialization.Source.config = src\Foundation\Serialization\code\App_Config\Include\Foundation\Foundation.Serialization.Source.config
 		nuget.config = nuget.config
+		publishsettings.targets = publishsettings.targets
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -29,12 +31,68 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D27C83
 		documentation\images\hackathon.png = documentation\images\hackathon.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DependencyInjection", "DependencyInjection", "{DDB0A15D-3DF8-4778-9CF0-16C96FBCBA42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serialization", "Serialization", "{73142208-3C91-49EA-A32B-5318EEC8DD8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinkTracker", "LinkTracker", "{9BBA4B02-CC43-4C64-9320-D1910356734B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.DependencyInjection", "src\Foundation\DependencyInjection\code\Sitecore.Foundation.DependencyInjection.csproj", "{366148B7-2392-4F42-80D6-786B7A3682AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sbos.Foundation.LinkTracker", "src\Foundation\LinkTracker\code\Sbos.Foundation.LinkTracker.csproj", "{C8844437-998F-4371-8DEA-53BE5E4A2DD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Serialization", "src\Foundation\Serialization\code\Sitecore.Foundation.Serialization.csproj", "{007CD5DC-0030-460D-91A3-3DDEA9AB472F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{A34DF9AB-4D99-444C-83B7-6C7B9F19D869}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{43EB85E2-066F-4B0B-878D-5943A04387D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecorps.Project.Demo", "src\Project\Demo\code\Sitecorps.Project.Demo.csproj", "{6E066CC6-FB27-4C1E-A157-482CE3F20B4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecorps.Project.Common", "src\Project\Common\code\Sitecorps.Project.Common.csproj", "{4B5E36AE-4033-4373-A213-F6BEAF06CC97}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{366148B7-2392-4F42-80D6-786B7A3682AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{366148B7-2392-4F42-80D6-786B7A3682AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{366148B7-2392-4F42-80D6-786B7A3682AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{366148B7-2392-4F42-80D6-786B7A3682AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8844437-998F-4371-8DEA-53BE5E4A2DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8844437-998F-4371-8DEA-53BE5E4A2DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8844437-998F-4371-8DEA-53BE5E4A2DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8844437-998F-4371-8DEA-53BE5E4A2DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E066CC6-FB27-4C1E-A157-482CE3F20B4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E066CC6-FB27-4C1E-A157-482CE3F20B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E066CC6-FB27-4C1E-A157-482CE3F20B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E066CC6-FB27-4C1E-A157-482CE3F20B4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B5E36AE-4033-4373-A213-F6BEAF06CC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B5E36AE-4033-4373-A213-F6BEAF06CC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B5E36AE-4033-4373-A213-F6BEAF06CC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B5E36AE-4033-4373-A213-F6BEAF06CC97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D27C83D2-2EAF-4E44-A1ED-2B3C2EBB5854} = {DAFED8F5-6CBD-4384-AAD6-DC3BCCF24911}
+		{DDB0A15D-3DF8-4778-9CF0-16C96FBCBA42} = {4FDA1DCD-D33E-447E-91C1-F4AE818E2CF0}
+		{73142208-3C91-49EA-A32B-5318EEC8DD8E} = {4FDA1DCD-D33E-447E-91C1-F4AE818E2CF0}
+		{9BBA4B02-CC43-4C64-9320-D1910356734B} = {4FDA1DCD-D33E-447E-91C1-F4AE818E2CF0}
+		{366148B7-2392-4F42-80D6-786B7A3682AE} = {DDB0A15D-3DF8-4778-9CF0-16C96FBCBA42}
+		{C8844437-998F-4371-8DEA-53BE5E4A2DD8} = {9BBA4B02-CC43-4C64-9320-D1910356734B}
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F} = {73142208-3C91-49EA-A32B-5318EEC8DD8E}
+		{A34DF9AB-4D99-444C-83B7-6C7B9F19D869} = {15D97D61-D597-42EC-B7E9-E9EC8130E630}
+		{43EB85E2-066F-4B0B-878D-5943A04387D4} = {15D97D61-D597-42EC-B7E9-E9EC8130E630}
+		{6E066CC6-FB27-4C1E-A157-482CE3F20B4B} = {43EB85E2-066F-4B0B-878D-5943A04387D4}
+		{4B5E36AE-4033-4373-A213-F6BEAF06CC97} = {A34DF9AB-4D99-444C-83B7-6C7B9F19D869}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {311DA37D-528B-43B2-A99B-E7253F841D46}
