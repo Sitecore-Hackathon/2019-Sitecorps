@@ -32,7 +32,7 @@ Does your module rely on other Sitecore modules or frameworks?
 - Add JSS host and binding
   - In your local hosts file add **(127.0.0.1 sc910.sc.jssdemo)**
   - Add **sc910.sc.jssdemo** to your Sitecore iis bindings 
-- Install Demo Package from Sc.Package folder [Sitecore React Trackable Links Module and Demo-1.0.zip](/sc.package/Sitecore%20React%20Trackable%20Links%20Module%20and%20Demo-1.0.zip "Sitecore React Trackable Links Module and Demo-1.0.zip")  and then Select **Overwrite all**
+- Install Demo Package from Sc.Package folder [Sitecore React Trackable Links Module and Demo-1.0.zip](https://github.com/Sitecore-Hackathon/2019-Sitecorps/raw/master/sc.package/Sitecore%20React%20Trackable%20Links%20Module%20and%20Demo-1.0.zip "Sitecore React Trackable Links Module and Demo-1.0.zip")  and then Select **Overwrite all**
 - Publish Site
 - Rebuild Index (need master and core indexed for module to fully work)
 - Deploy marketing definitions (Goals and Events only) from Control Panel 
