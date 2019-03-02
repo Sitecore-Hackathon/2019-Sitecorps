@@ -642,9 +642,19 @@ namespace Sbos.Foundation.LinkTracker.sitecore.shell.Applications.Dialogs.Genera
                     {
                         XmlElement ElementList = (XmlElement)nodeList[i];
                         ElementList.IsEmpty = true;
-
+                        int count = 0;
                         foreach (var item in ItemsOn)
                         {
+                            if (count == 0)
+                            {
+                                XmlElement noneListItem = xdoc.CreateElement("ListItem");
+
+                                noneListItem.SetAttribute("Value", string.Empty);
+                                noneListItem.SetAttribute("Header", "None");
+                                noneListItem.RemoveAttribute("xmlns");
+
+                                ElementList.AppendChild(noneListItem);
+                            }
                             var itemName = item.Name;
                             var itemId = item.ID;
 
@@ -655,6 +665,7 @@ namespace Sbos.Foundation.LinkTracker.sitecore.shell.Applications.Dialogs.Genera
                             listItem.RemoveAttribute("xmlns");
 
                             ElementList.AppendChild(listItem);
+                            count++;
                         }
                         xdoc.Save(webRooPath + Sitecore.Sbos.Module.LinkTracker.Data.Constants.LinkTrackerConstants.GeneralFormPath);
                     }
