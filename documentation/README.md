@@ -16,6 +16,7 @@ Trackable Links module will enable content authors and Marketers to assosiate Go
 Does your module rely on other Sitecore modules or frameworks?
 
 - Sitecore 9.1 XP0
+- Node NodeJSv.10.15.1
 - Enable anonymous Indexing on xConnect (See [here](https://doc.sitecore.com/developers/91/sitecore-experience-platform/en/enable-indexing-of-anonymous-contacts.html))
 - Install **[Sitecore JavaScript Services Server for Sitecore 9.1 XP]** on Sitecore Instance [Link]
 (https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/110/Sitecore_JavaScript_Services_1100.aspx)
