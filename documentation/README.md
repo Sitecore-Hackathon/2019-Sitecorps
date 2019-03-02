@@ -4,7 +4,12 @@
 
 ## Summary
 
-**Category:** Best enhancement to JSS to change a JSS component rendering behavior based on user's session data
+## Category:
+Best enhancement to JSS to change a JSS component rendering behavior based on user's session data
+
+## Submission
+**Trackable Links Module** 
+> Empower marketers to trigger any goal or event from Sitecore link fields in JSS.
 
 Trackable Links module will enable content authors and Marketers to assosiate Goals and Events to a general link field from Content Editor or Experience editor then track them via clicks on the links on the Sitecore JSS powered website (React) and push them back to xConnect, Which will then enable them to personalize any content based on the trigger goals/events for the jss website visitor 
 
