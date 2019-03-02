@@ -107,6 +107,7 @@
     <Content Include="sitecore\shell\Applications\Dialogs\JavascriptLink\JavascriptLink.xml" />
     <Content Include="sitecore\shell\Applications\Dialogs\MailLink\MailLink.xml" />
     <Content Include="sitecore\shell\Applications\Dialogs\MediaLink\MediaLink.xml" />
+    <Content Include="sitecore\shell\Applications\Dialogs\GeneralLink\GeneralLink.xml" />
     <None Include="Demo.md" />
     <None Include="Web.config" />
   </ItemGroup>
@@ -133,6 +134,7 @@
     <Compile Include="sitecore\shell\Applications\Dialogs\JavascriptLink\TrackedJavascriptLink.cs" />
     <Compile Include="sitecore\shell\Applications\Dialogs\MailLink\TrackedMailLink.cs" />
     <Compile Include="sitecore\shell\Applications\Dialogs\MediaLink\TrackedMediaLink.cs" />
+    <Compile Include="sitecore\shell\Applications\Dialogs\GeneralLink\GeneralLinkForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\Local.pubxml" />

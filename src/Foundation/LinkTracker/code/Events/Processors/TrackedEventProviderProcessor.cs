@@ -30,6 +30,7 @@ namespace Sitecore.Sbos.Module.LinkTracker.Events.Processors
             string webRooPath = this.GetWebRootPath("Sitecore.Sbos.Module.LinkTracker");
 
             var dialogPaths = new[] {
+                LinkTrackerConstants.Dialog.GeneralFormPath,
                 LinkTrackerConstants.Dialog.ExternalForm,
                 LinkTrackerConstants.Dialog.MediaForm,
                 LinkTrackerConstants.Dialog.JavascriptForm,

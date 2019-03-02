@@ -6,6 +6,7 @@ namespace Sitecore.Sbos.Module.LinkTracker.Data.Constants
     {
         public struct Dialog
         {
+            public const string GeneralFormPath = "/sitecore/shell/Applications/Dialogs/GeneralLink/GeneralLink.xml";
             public const string ExternalForm= "/sitecore/shell/Applications/Dialogs/ExternalLink/ExternalLink.xml";
             public const string InternalForm = "/sitecore/shell/Applications/Dialogs/InternalLink/InternalLink.xml";
             public const string JavascriptForm = "/sitecore/shell/Applications/Dialogs/JavascriptLink/JavascriptLink.xml";
@@ -51,5 +52,20 @@ namespace Sitecore.Sbos.Module.LinkTracker.Data.Constants
         public static readonly ID PageEventTemplateId = new ID("{059CFBDF-49FC-4F14-A4E5-B63E1E1AFB1E}");
 
         public static readonly ID CampaignTemplateID = new ID("{94FD1606-139E-46EE-86FF-BC5BF3C79804}");
+
+        public class Attributes
+        {
+            public const string goalid = "goalid";
+            public const string eventid = "eventid";
+            public const string anchor = "anchor";
+            public const string _class = "class";
+            public const string id = "id";
+            public const string linktype = "linktype";
+            public const string querystring = "querystring";
+            public const string target = "target";
+            public const string text = "text";
+            public const string title = "title";
+            public const string url = "url";
+        }
     }
 }
