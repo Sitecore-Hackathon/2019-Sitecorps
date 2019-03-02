@@ -43,9 +43,25 @@ Everything should be included in the provided package and steps above
 ## Usage
 
 The provided package will include demo items that we will explain how it works and how it can be used in other areas
-1-  We create a React component that Extend the original Link component, and we named it **TrackableLink**
-2- To use this component, you can reference it from any React component like this:
+
+-  We create a React component that Extend the original Link component, and we named it **TrackableLink**
+- To use this component, you can reference it from any React component like this, Note that the usage of TrackableLink is the same as the original Link, so it still support all the Link features and properties:
 ![Trackable Link Usage](images/TrackableLinkUsage.png?raw=true "Trackable Link Usage")
+- Thats it! thats all you need to start tracking links from within general link field, Next will show you how would you select goal/event and how to personalize content based on visitor clicks
+- In our demo, We created a template with two links, Each one will trigger differnt Goal, Go to /sitecore/content/demo/home/TrackingLinks and open experience editor, You will see this component on the page:
+![Trackable Link Rendering Example](images/TrackableLinkRendering.png?raw=true "Trackable Link Rendering Example")
+- Choose one of links fields, and click on "Edit Link" button and you will see the following screen where you set goal or event for this link:
+![Insert Link Dialog](images/InsertLinkDialog.png?raw=true "Insert Link Dialog")
+- Do the same for the other Link field
+- If you clear your session by going to http://sc910.sc.jssdemo/sitecore/api/jss/track/flush, this will flush the current user session and submit it to xConnect, You can go to Analytics Reports to view the registered goals/events
+- To personalize content based on user clicks, you can simply use sitecore default conditional rules, For this demo we applying personalization based on triggered goal for the user session, We created another content component on the same page to show that once you click the link you can immediately see personalization applied:
+
+![Personalized Content](images/PersonalizedContent.png?raw=true "Personalized Content")
+
+**Want to See this in action in the demo site?**
+- Go to http://sc910.sc.jssdemo/TrackingLinks
+- Click on any of the link of the page (You like Red or Blue color?)
+- You will imediately start seeing personalized content based on what you have clicked!
 
 ## Video
 
