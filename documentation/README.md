@@ -54,6 +54,8 @@ The provided package will include demo items that we will explain how it works a
 ![Insert Link Dialog](images/InsertLinkDialog.png?raw=true "Insert Link Dialog")
 - Do the same for the other Link field
 - If you clear your session by going to http://sc910.sc.jssdemo/sitecore/api/jss/track/flush, this will flush the current user session and submit it to xConnect, You can go to Analytics Reports to view the registered goals/events
+![Goals Report](images/LinksReports.png?raw=true "Goals Report")
+
 - To personalize content based on user clicks, you can simply use sitecore default conditional rules, For this demo we applying personalization based on triggered goal for the user session, We created another content component on the same page to show that once you click the link you can immediately see personalization applied:
 
 ![Personalized Content](images/PersonalizedContent.png?raw=true "Personalized Content")
