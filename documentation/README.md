@@ -33,7 +33,7 @@ Does your module rely on other Sitecore modules or frameworks?
 - Publish Site
 - Deploy marketing definitions (Goals and Events only) from Control Panel 
 
-![Deploy Marketing Definition](documentation/images/Deploy-marketing-definitions.png?raw=true "Deploy Marketing Definition")
+![Deploy Marketing Definition](images/Deploy-marketing-definitions.png?raw=true "Deploy Marketing Definition")
 
 
 ## Configuration
@@ -44,7 +44,8 @@ Everything should be included in the provided package and steps above
 
 The provided package will include demo items that we will explain how it works and how it can be used in other areas
 1-  We create a React component that Extend the original Link component, and we named it **TrackableLink**
-2- To use this component, you can reference it from any React component like this
+2- To use this component, you can reference it from any React component like this:
+![Trackable Link Usage](images/TrackableLinkUsage.png?raw=true "Trackable Link Usage")
 
 ## Video
 
