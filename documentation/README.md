@@ -48,7 +48,8 @@ Everything should be included in the provided package and steps above
 
 The provided package will include demo items that we will explain how it works and how it can be used in other areas
 
--  We create a React component that Extend the original Link component, and we named it **TrackableLink**
+-  New **TrackableLink** React component added by module package extends the original Link Field component to include tracking.
+- Content editor and Experience editor dialogs for Sitecore link fields have been extended to allow marketers to specify a goal or event to trigger for link.
 - To use this component, you can reference it from any React component like this, Note that the usage of TrackableLink is the same as the original Link, so it still support all the Link features and properties:
 ![Trackable Link Usage](images/TrackableLinkUsage.png?raw=true "Trackable Link Usage")
 - Thats it! thats all you need to start tracking links from within general link field, Next will show you how would you select goal/event and how to personalize content based on visitor clicks
