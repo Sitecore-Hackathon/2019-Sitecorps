@@ -54,6 +54,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecorps.Project.Demo", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecorps.Project.Common", "src\Project\Common\code\Sitecorps.Project.Common.csproj", "{4B5E36AE-4033-4373-A213-F6BEAF06CC97}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JSS", "JSS", "{CDB2C33F-CE97-409B-B511-AC7ACBEC7576}"
+	ProjectSection(SolutionItems) = preProject
+		jss\demo\src\components\Styleguide-FieldUsage-TrackableLinks\index.js = jss\demo\src\components\Styleguide-FieldUsage-TrackableLinks\index.js
+		jss\demo\sitecore\definitions\components\Styleguide-FieldUsage-TrackableLinks.sitecore.js = jss\demo\sitecore\definitions\components\Styleguide-FieldUsage-TrackableLinks.sitecore.js
+		jss\demo\src\components\Sitecorps-react-trackable-link\TrackableLink.js = jss\demo\src\components\Sitecorps-react-trackable-link\TrackableLink.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
