@@ -9,12 +9,13 @@ Best enhancement to JSS to change a JSS component rendering behavior based on us
 **Trackable Links Module** 
 > Empower marketers to trigger any goal or event from Sitecore link fields in JSS.
 
-Trackable Links module will enable content authors and Marketers to assosiate Goals and Events to a general link field from Content Editor or Experience editor then track them via clicks on the links on the Sitecore JSS powered website (React) and push them back to xConnect, Which will then enable them to personalize any content based on the trigger goals/events for the jss website visitor 
+Inspired by the SBOS team's previous work, this Trackable Links module enables content authors and marketers in Sitecore 9.1 JSS to associate Sitecore Goals and Events to general link fields. Both Content Editor and Experience editor link dialogs are supported. A <TrackableLink /> ReactJS component is offered as an extension of the default Sitecore <Link />. This component will seemlessly apply the intended goals and events in the JSS platform  to the user's interaction when the link is clicked. This compliments Sitecore's default behaviour of tracking on page view and tightens focus on user click choices. Use cases include A/B testing multiple CTAs to the same page, tracking of external links, and many more! All of these data points empower marketers to personalize messaging to the visitor. 
 
 ## Pre-requisites:
 
+Does your module rely on other Sitecore modules or frameworks?
+
 - Sitecore 9.1 XP0
-- Node NodeJSv.10.15.1
 - Enable anonymous Indexing on xConnect (See [here](https://doc.sitecore.com/developers/91/sitecore-experience-platform/en/enable-indexing-of-anonymous-contacts.html))
 - Install **[Sitecore JavaScript Services Server for Sitecore 9.1 XP]** on Sitecore Instance [Link]
 (https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/110/Sitecore_JavaScript_Services_1100.aspx)
@@ -74,6 +75,6 @@ With Sitecore JSS React Tracking API, there seem to be a bug when used in **Fire
 
 ## Video:
 
-https://www.youtube.com/watch?v=tGimhgij-00&feature=youtu.be
+Please provide a video highlighing your Hackathon module submission and provide a link to the video. Either a [direct link](https://www.youtube.com/watch?v=EpNhxW4pNKk) to the video, upload it to this documentation folder or maybe upload it to Youtube...
 
-[![Sitecore Hackathon - Sitecore Corps Team Video](https://img.youtube.com/vi/tGimhgij-00/0.jpg)](https://www.youtube.com/watch?v=tGimhgij-00)
+[![Sitecore Hackathon Video Embedding Alt Text](https://img.youtube.com/vi/EpNhxW4pNKk/0.jpg)](https://www.youtube.com/watch?v=EpNhxW4pNKk)
