@@ -1,15 +1,15 @@
 var yargs = require("yargs").argv;
 
 module.exports = function () {
-    var instanceRoot = yargs.instanceRoot || "C:\\inetpub\\wwwroot\\tjc.local.sc";
+    var instanceRoot = yargs.instanceRoot || "C:\\inetpub\\wwwroot\\sc910.sc";
     var config = {
         instanceRoot        : instanceRoot,
         transform           : yargs.transform           || "LOCAL", // .transform file extension
         websiteRoot         : yargs.websiteRoot         || instanceRoot + "\\",
         dataRoot            : yargs.dataRoot            || instanceRoot + "\\App_Data",
         srcRoot             : yargs.srcRoot             || "./src",
-        hostName            : yargs.hostName            || "http://tjc.local.sc" ,
-        solutionName        : yargs.solutionName        || "JointCommissionEnterprise",
+        hostName            : yargs.hostName            || "http://sc910.sc" ,
+        solutionName        : yargs.solutionName        || "Hackathon.Boilerplate",
         buildConfiguration  : yargs.buildConfiguration  || "Debug",
         buildPlatform       : yargs.buildPlatform       || "Any CPU",
         publishPlatform     : yargs.publishPlatform     || "AnyCpu",

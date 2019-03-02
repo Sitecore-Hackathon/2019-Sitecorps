@@ -1,0 +1,49 @@
+{
+  "name": "helix-angular",
+  "version": "1.0.0",
+  "description": "Based on Sitecore Habitat Node Dependencies merged with some Angular JS Dependencies",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "async": "^1.5.2",
+    "glob": "^7.0.3",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-exec": "^2.1.2",
+    "gulp-foreach": "^0.1.0",
+    "gulp-load-plugins": "^1.0.0",
+    "gulp-msbuild": "0.5.5",
+    "gulp-newer": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.7",
+    "gulp-wait": "^0.0.2",
+    "gulp-watch": "^4.3.5",
+    "merge": "^1.2.0",
+    "merge-stream": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "require-dir": "^0.3.1",
+    "rimraf": "^2.4.3",
+    "run-sequence": "^1.1.4",
+    "vinyl": "^1.1.0",
+    "xml2js": "^0.4.16",
+    "xmlpoke": "^0.1.12",
+    "yargs": "^6.4.0"
+  },
+  "devDependencies": {
+    "canonical-path": "0.0.2",
+    "gulp-nuget-restore": "^0.4.0",
+    "tslint": "^3.15.1"
+  },
+  "scripts": {
+    "gulp": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint ./src/**/*.ts -t verbose"
+  },
+  "repository": {},
+  "author": "AmericanEagle.com",
+  "license": "ISC",
+  "homepage": "https://github.com/Sitecore/Habitat#readme"
+}
