@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '@sitecore-jss/sitecore-jss-react';
+import {TrackableLink} from '../Sitecorps-react-trackable-link/TrackableLink'
 import StyleguideSpecimen from '../Styleguide-Specimen';
 
 /**
@@ -8,22 +9,22 @@ import StyleguideSpecimen from '../Styleguide-Specimen';
 const StyleguideFieldUsageLink = (props) => (
   <StyleguideSpecimen {...props} e2eId="styleguide-fieldusage-link">
     External link:&nbsp;
-    <Link field={props.fields.externalLink} />
+    <TrackableLink field={props.fields.externalLink} />
     <br />
     Internal link:&nbsp;
-    <Link field={props.fields.internalLink}>
+    <TrackableLink field={props.fields.internalLink}>
       <em>HTML</em> or other components can be used within link renderers, for example links to
       images.
-    </Link>
+    </TrackableLink>
     <br />
     Email link:&nbsp;
-    <Link field={props.fields.emailLink} />
+    <TrackableLink field={props.fields.emailLink} />
     <br />
     All possible content params link:&nbsp;
-    <Link field={props.fields.paramsLink} />
+    <TrackableLink field={props.fields.paramsLink} />
     <br />
     The link component accepts params of its own:&nbsp;
-    <Link
+    <TrackableLink
       field={props.fields.externalLink}
       showLinkTextWithChildrenPresent={true}
       className="font-weight-bold"
